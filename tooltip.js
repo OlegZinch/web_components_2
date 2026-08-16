@@ -1,8 +1,17 @@
 class Tooltip extends HTMLElement {
   constructor() {
     super()
-    console.log('Tooltip working')
   }
+
+  connectedCallback() {
+    const tooltipIcon = document.createElement('span')
+    tooltipIcon.textContent = ' (?)'
+    this.appendChild(tooltipIcon)
+  }
+
+  disconnectedCallback() {}
+
+  attributeChangedCallback(name, oldValue, newValue) {}
 }
 
 customElements.define('uc-tooltip', Tooltip)
