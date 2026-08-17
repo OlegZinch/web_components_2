@@ -13,7 +13,7 @@
   </head>
   <body>
     <template id="tooltip-template">
-      <span>&nbsp;(?)</span>
+      <slot>Some default</slot><span>&nbsp;(?)</span>
     </template>
     <p>
       <uc-tooltip text="Web Components is a set of standards."
@@ -21,7 +21,7 @@
       >&nbsp;are awesome!
     </p>
     <p>
-      <uc-tooltip>Here we go!</uc-tooltip>
+      <uc-tooltip></uc-tooltip>
     </p>
   </body>
 </html>
