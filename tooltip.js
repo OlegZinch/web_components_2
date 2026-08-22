@@ -14,6 +14,9 @@ class Tooltip extends HTMLElement {
           padding: 4px;
           border-radius: 4px;
         }
+        .highlight {
+          background-color: red;
+        }
       </style>
       <slot>Some default</slot>
       <span>&nbsp;(?)</span>
