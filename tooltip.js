@@ -14,7 +14,7 @@ class Tooltip extends HTMLElement {
           padding: 4px;
           border-radius: 4px;
         }
-        :host {
+        :host(.important) {
           background: #ccc;
         }
         .highlight {
