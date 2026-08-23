@@ -55,6 +55,20 @@ class Tooltip extends HTMLElement {
     this.style.position = 'relative'
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(name, oldValue, newValue)
+    if (oldValue === newValue) {
+      return
+    }
+    if (name === 'text') {
+      this._tooltipText = newValue
+    }
+  }
+
+  static get observedAttributes() {
+    return ['text']
+  }
+
   _showTooltip() {
     this._tooltipContainer = document.createElement('div')
     this._tooltipContainer.textContent = this._tooltipText
@@ -66,8 +80,6 @@ class Tooltip extends HTMLElement {
   }
 
   disconnectedCallback() {}
-
-  attributeChangedCallback(name, oldValue, newValue) {}
 }
 
 customElements.define('uc-tooltip', Tooltip)
