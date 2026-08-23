@@ -15,7 +15,7 @@ class Tooltip extends HTMLElement {
           border-radius: 4px;
         }
         :host(.important) {
-          background: #ccc;
+          background: var(--color-primary, #ccc);
         }
         :host-context(p) {
           font-weight: bold;
