@@ -51,7 +51,6 @@ class Tooltip extends HTMLElement {
     const tooltipIcon = this.shadowRoot.querySelector('span')
     tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this))
     tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this))
-    this.shadowRoot.appendChild(tooltipIcon)
     this.style.position = 'relative'
   }
 
@@ -64,6 +63,8 @@ class Tooltip extends HTMLElement {
       this._tooltipText = newValue
     }
   }
+
+  disconnectedCallback() {}
 
   static get observedAttributes() {
     return ['text']
@@ -78,8 +79,6 @@ class Tooltip extends HTMLElement {
   _hideTooltip() {
     this.shadowRoot.removeChild(this._tooltipContainer)
   }
-
-  disconnectedCallback() {}
 }
 
 customElements.define('uc-tooltip', Tooltip)
